@@ -1,0 +1,113 @@
+.cart {
+    &-details {
+        margin: 0 20px;
+    }
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 20px;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+        }
+    }
+    &-clear-btn {
+        padding: 10px 20px;
+        background: #FEEBEA;
+        color: $secondary-color;
+        outline: none;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+    }
+    &-items {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        margin: 40px 30px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        width: fit-content;
+        min-width: 550px;
+        border-radius: 15px;
+    }
+    &-product-img {
+        background: $white-color;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 10px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        width: 90px;
+        margin-right: 50px;
+        img {
+            height: 100px;
+            margin-top: -30px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+    }
+    &-remove {
+        width: 20px;
+        cursor: pointer;
+    }
+    &-info {
+        h3 {
+            color: $color-black;
+        }
+        span {
+            color: $color-grey;
+            font-size: $font-sm;
+            margin-bottom: -20px;
+        }
+        p {
+            color: $secondary-color;
+            font-weight: 800;
+            font-size: 22px;
+            margin-top: 25px;
+        }
+    }
+    &-number {
+        margin-left: 80px;
+        margin-right: 50px;
+        display: block;
+        text-align: center;
+        &-plus, &-minus {
+            background-color: #EBF4FF;
+            padding: 5px 10px;
+            border-radius: 4px;
+            color: #8A8E93;
+            cursor: pointer;
+
+            :hover {
+                background-color: #FEEBEA;
+            }
+        }
+        &-minus-disabled {
+            background-color: #ebf4ff4d;
+            padding: 5px 10px;
+            border-radius: 4px;
+            color: rgba(0, 0, 0, 0.116);
+            cursor: pointer;
+        }
+    }
+    &-total {
+        margin: 30px 30px;
+        display: flex;
+        p {
+            font-weight: 800;
+            font-size: $font-18;
+        }
+        &-wrapper {
+            background: $secondary-color;
+            color: $white-color;
+            width: fit-content;
+            padding: 0 20px;
+            border-radius: 10px;
+            margin-left: 50px;
+            p {
+                font-size: $font-18;
+            }
+        }
+    }
+}

@@ -1,0 +1,101 @@
+.search-bar {
+    margin-top: 20px;
+    background-color: rgb(247, 253, 255);
+    width: 100%;
+    align-content: center;
+    display: flex;
+    align-items: center;
+
+    input {
+        padding: 18px;
+        border-radius: 15px;
+        outline: none;
+        border: none;
+        width: 100%;
+        font-size: $font-18;
+        background: none;
+    }
+
+    img {
+        width: 24px;
+        height: 24px;
+        margin-left: 20px;
+    }
+}
+
+.goods {
+    &-content {
+        margin-top: 50px;
+        padding: 20px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        width: fit-content;
+        background-color: $white-color;
+    }
+    &-image {
+        background: $secondary-color;
+        border-radius: 30px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        width: 90px;
+        img {
+            height: 200px;
+            margin-top: -60px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+    }
+
+    &-info {
+        margin-left: 30px;
+
+        span {
+            color: $color-grey;
+            font-size: $font-sm;
+        }
+
+        p {
+            font-weight: bold;
+            color: $secondary-color;
+            font-size: $font-18;
+        }
+    }
+}
+
+.items-wrapper {
+    justify-items: center;  
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+}
+
+.products {
+    cursor: pointer;
+    margin-right: 20px;
+    margin-left: 20px;
+ 
+    :hover {
+        transition-duration: 200ms, 200ms;
+        transition-property: box-shadow, transform;
+        transition-delay: 0s, 0s;
+        transition-timing-function: ease, ease;
+        box-shadow: -8px 8px 0 $secondary-color;
+        transform: translate(4px, -4px);
+    }
+}
+
+.no-hover {
+    :hover {
+        transform: none;
+        transition: none;
+        transition-property: none;
+        transition-duration: 0ms;
+        box-shadow: none;
+        background: none;
+    }
+}
