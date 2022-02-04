@@ -1,5 +1,5 @@
 import shoppingCart from "../../assets/icons/shopping-cart.png";
-import React, { useContext, useEffect, useState} from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../App";
 

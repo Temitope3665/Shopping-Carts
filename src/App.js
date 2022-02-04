@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartSelected from './components/CartSelected/CartSelected';
 import Home from './components/Home/Home';
-import React, { useEffect, useReducer } from "react";
+import React, { useReducer } from "react";
 
 export const Context = React.createContext();
 

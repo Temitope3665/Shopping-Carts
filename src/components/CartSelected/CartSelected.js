@@ -7,12 +7,12 @@ import remove from "../../assets/icons/remove.png";
 const CartSelected = () => {
   const { dispatch, state } = useContext(Context);
   const [clear, setClear] = useState(false);
-  const [isDisabled, setIsDisabled] = useState(false);
+  const [, setIsDisabled] = useState(false);
   const [totalProducts, setTotalProducts] = useState(0);
   const [products, setProducts] = useState([]);
 
   // get initial items from local storage
-  const totalProductAdded = () => {
+  const getItemsFromLocalStorage = () => {
       let getItems;
       getItems = JSON.parse(localStorage.getItem("cart"));
       setProducts(getItems);
@@ -31,11 +31,11 @@ const CartSelected = () => {
     dispatch({
       type: "FETCH_LOCAL_STORAGE",
     });
-    totalProductAdded()
-  }, []);
+    getItemsFromLocalStorage()
+  }, [dispatch]);
 
   useEffect(() => {
-      totalProductAdded()
+    getItemsFromLocalStorage()
   }, [state.itemAddedToCart]);
 
   const clearItems = () => {
@@ -47,17 +47,10 @@ const CartSelected = () => {
 
   // update item in cart
   const modifyCart = (item_id, value) => {
-    const selectedProduct = state.itemAddedToCart.find(
-      (item) => item.id === item_id
-    );
-    const selectedProductIndex = state.itemAddedToCart.findIndex(
-      (item) => item.id === item_id
-    );
+    const selectedProduct = state.itemAddedToCart.find((item) => item.id === item_id);
+    const selectedProductIndex = state.itemAddedToCart.findIndex((item) => item.id === item_id);
     const products = [...state.itemAddedToCart];
-    const updatedProduct = {
-      ...selectedProduct,
-      quantity: selectedProduct.quantity + value,
-    };
+    const updatedProduct = {...selectedProduct, quantity: selectedProduct.quantity + value};
     products[selectedProductIndex] = updatedProduct;
     localStorage.setItem("cart", JSON.stringify(products));
 

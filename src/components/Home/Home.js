@@ -59,7 +59,7 @@ const Home = () => {
     dispatch({
       type: 'FETCH_LOCAL_STORAGE',
     })
-  }, [])
+  }, [dispatch])
   
   useEffect(() => {
     setCartItems(state.itemAddedToCart);
